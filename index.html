@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PumpHub.tn — vêtements et accessoires de sport en Tunisie.">
+  <title>PumpHub.tn — Training Essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">LIVRAISON PARTOUT EN TUNISIE · COLLECTION TRAINING</div>
+
+  <header class="site-header">
+    <button class="icon-button menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <a class="brand" href="#" aria-label="PumpHub accueil">PUMP<span>HUB</span><small>.TN</small></a>
+    <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#homme">Homme</a>
+      <a href="#femme">Femme</a>
+      <a href="#accessoires">Accessoires</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box" aria-label="Rechercher un produit">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Rechercher..." autocomplete="off">
+      </label>
+      <button class="icon-button" id="favoritesButton" aria-label="Afficher les favoris">♡</button>
+      <button class="icon-button cart-trigger" id="cartButton" aria-label="Ouvrir le panier">
+        ♧ <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Présentation">
+      <div class="hero-copy">
+        <p class="eyebrow">PUMPHUB TRAINING CLUB</p>
+        <h1>BUILT TO<br><span>MOVE.</span></h1>
+        <p>Des essentiels pour l’entraînement, la récupération et le quotidien.</p>
+        <a class="button button-dark" href="#nouveautes">DÉCOUVRIR LA COLLECTION <span>↗</span></a>
+        <p class="hero-note">Sélection sport · Style minimal · Tunisie</p>
+      </div>
+      <div class="hero-image" role="img" aria-label="Tenue de sport présentée dans un décor minimal">
+        <div class="hero-sticker">TRAIN<br>HARD<br><span>✳</span></div>
+      </div>
+    </section>
+
+    <section class="category-strip" aria-label="Catégories">
+      <button class="category-chip active" data-category="Tous">Tout voir <span>↗</span></button>
+      <button class="category-chip" data-category="Homme">Homme <span>↗</span></button>
+      <button class="category-chip" data-category="Femme">Femme <span>↗</span></button>
+      <button class="category-chip" data-category="Accessoires">Accessoires <span>↗</span></button>
+    </section>
+
+    <section class="products-section" id="nouveautes">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CHOISIS TON ÉQUIPEMENT</p>
+          <h2>POPULAR RIGHT NOW<span>.</span></h2>
+        </div>
+        <p class="results-label" id="resultsLabel">Produits sélectionnés</p>
+      </div>
+      <div class="filter-row">
+        <div class="filter-tabs" role="group" aria-label="Filtrer par catégorie">
+          <button class="filter-tab active" data-category="Tous">Tout</button>
+          <button class="filter-tab" data-category="Homme">Homme</button>
+          <button class="filter-tab" data-category="Femme">Femme</button>
+          <button class="filter-tab" data-category="Accessoires">Accessoires</button>
+        </div>
+        <label class="sort-control">Trier :
+          <select id="sortSelect">
+            <option value="featured">Sélection</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="name">Nom A–Z</option>
+          </select>
+        </label>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>Aucun produit trouvé. Essaie une autre recherche.</p>
+    </section>
+
+    <section class="benefits" aria-label="Informations pratiques">
+      <div><span class="benefit-icon">↗</span><strong>Livraison en Tunisie</strong><p>Options de livraison à confirmer lors de la commande.</p></div>
+      <div><span class="benefit-icon">◇</span><strong>Conseils de taille</strong><p>Choisis la taille adaptée depuis la fiche produit.</p></div>
+      <div><span class="benefit-icon">◎</span><strong>Une question ?</strong><p>Contacte l’équipe PumpHub avant de commander.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#">PUMP<span>HUB</span><small>.TN</small></a>
+    <p>Training essentials. Made for your everyday movement.</p>
+    <div class="footer-links"><a href="#nouveautes">Boutique</a><a href="#contact">Contact</a><a href="https://www.instagram.com/pumphub.tn/">Instagram</a></div>
+    <small>© <span id="year"></span> PumpHub.tn — Maquette de démonstration.</small>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p class="eyebrow">TA SÉLECTION</p><h2 id="cartTitle">Ton panier <span id="drawerCount">(0)</span></h2></div>
+      <button class="icon-button" id="closeCart" aria-label="Fermer le panier">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">Ton panier est vide pour le moment.</div>
+    <div class="cart-summary">
+      <div class="subtotal"><span>Sous-total</span><strong id="cartSubtotal">0,000 TND</strong></div>
+      <p>Les frais de livraison seront confirmés avant validation.</p>
+      <button class="button button-dark checkout-button" id="checkoutButton">CONTINUER <span>→</span></button>
+      <small>Démo uniquement : aucune commande ni aucun paiement n’est envoyé.</small>
+    </div>
+  </aside>
+
+  <dialog class="product-dialog" id="productDialog">
+    <button class="dialog-close icon-button" id="closeProduct" aria-label="Fermer">×</button>
+    <div class="dialog-content" id="dialogContent"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
